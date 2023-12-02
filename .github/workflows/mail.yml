@@ -1,0 +1,25 @@
+name: Main
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      # You can test your matrix by printing the current Python version
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+      - uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: "1.7.1"
+      - name: Build
+        run: |
+          make install
+          make lint
