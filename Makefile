@@ -26,3 +26,6 @@ package-install:
 	python3 -m pip install --user dist/*.whl
 
 .PHONY: install test lint selfcheck check build
+
+diff-json:
+	poetry run gendiff -- fixtures/file1.json fixtures/file2.json
