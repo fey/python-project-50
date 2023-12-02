@@ -16,6 +16,13 @@ selfcheck:
 check: selfcheck test lint
 
 build: check
+	rm -rf dist/*
 	poetry build
+
+publish:
+	poetry publish --dry-run
+
+package-install:
+	python3 -m pip install --user dist/*.whl
 
 .PHONY: install test lint selfcheck check build

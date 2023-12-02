@@ -5,6 +5,13 @@ description = ""
 authors = ["Nikolay Gagarinov <feycot@gmail.com>"]
 readme = "README.md"
 
+packages = [
+  { include = "gendiff" },
+]
+
+[tool.poetry.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
+
 [tool.poetry.dependencies]
 python = "^3.11"
 

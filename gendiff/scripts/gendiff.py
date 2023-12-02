@@ -1,5 +1,16 @@
+from argparse import ArgumentParser
+
+
 def main():
-    return None
+    parser = ArgumentParser(
+        prog='gendiff',
+        description='Compares two configuration files and shows a difference.'
+    )
+
+    parser.add_argument('first_file')
+    parser.add_argument('second_file')
+
+    parser.parse_args()
 
 
 if __name__ == '__main__':
