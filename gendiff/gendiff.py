@@ -62,11 +62,11 @@ def format_plain(diff):
                 lines.append(f'    {diff_node['key']}: {formatted_old_value}')
             case 'added':
                 lines.append(f'  + {diff_node['key']}: {formatted_new_value}')
+            case 'unchanged':
+                lines.append(f'    {diff_node['key']}: {formatted_old_value}')
             case 'changed':
                 lines.append(f'  - {diff_node['key']}: {formatted_old_value}')
                 lines.append(f'  + {diff_node['key']}: {formatted_new_value}')
-            case 'unchanged':
-                lines.append(f'    {diff_node['key']}: {formatted_old_value}')
             # case 'nested':
             #     line = ""
             case _:
